@@ -27,6 +27,10 @@
 [![open issues](https://badgen.net/github/open-issues/valentjn/ltex-ls?label=open/closed%20issues&color=blue)](https://github.com/valentjn/ltex-ls/issues)&nbsp;[![closed issues](https://badgen.net/github/closed-issues/valentjn/ltex-ls?label=)](https://github.com/valentjn/ltex-ls/issues)
 
 <!-- #if TARGET == 'vscode' -->
+**NOTICE:** This is a fork of Julian Valentin's LT<sub>E</sub>X extension for Visual Studio Code, I have made some changes to the extension to make it work with the latest version of Visual Studio Code. This is mostly for my personal use, but I'm making it public in case someone else finds it useful. 
+
+I don't usually code in TypeScript or JavaScript, and I'm aware that the original implementation of the extension was broken due to security changes in the latest versions of node.js, so if you're a developer, and you see something that could be improved, please feel free to open an issue.
+
 **LT<sub>E</sub>X** provides offline grammar checking of various markup languages in Visual Studio Code using [LanguageTool (LT)](https://languagetool.org/). LT<sub>E</sub>X currently supports BibT<sub>E</sub>X, ConT<sub>E</sub>Xt, L<sup>A</sup>T<sub>E</sub>X, Markdown, Org, reStructuredText, R Sweave, and XHTML documents. In addition, LT<sub>E</sub>X can check comments in many popular programming languages (optional, opt-in).
 <!-- #elseif TARGET == 'coc.nvim' -->
 <!-- **LT<sub>E</sub>X** provides offline grammar checking of various markup languages in Vim/Neovim using [LanguageTool (LT)](https://languagetool.org/) and [coc.nvim](https://github.com/neoclide/coc.nvim). LT<sub>E</sub>X currently supports BibT<sub>E</sub>X, ConT<sub>E</sub>Xt, L<sup>A</sup>T<sub>E</sub>X, Markdown, Org, reStructuredText, R Sweave, and XHTML documents. In addition, LT<sub>E</sub>X can check comments in many popular programming languages (optional, opt-in). -->
