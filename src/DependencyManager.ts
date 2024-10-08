@@ -416,6 +416,7 @@ export default class DependencyManager {
     const executableOptions: ChildProcess.SpawnSyncOptionsWithStringEncoding = {
           encoding: 'utf-8',
           timeout: 15000,
+          shell: true,
         };
 
     if (executable.options != null) {

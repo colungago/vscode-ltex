@@ -67,6 +67,23 @@ async function startLanguageClient(context: Code.ExtensionContext,
     serverOptions = await dependencyManager.getLtexLsExecutable();
   }
 
+  // Add shell: true to the server options
+  if (serverOptions && 'command' in serverOptions) {
+    (serverOptions as CodeLanguageClient.Executable).options = {
+      ...((serverOptions as CodeLanguageClient.Executable).options || {}),
+      shell: true
+    };
+  } else if (serverOptions && 'run' in serverOptions && 'debug' in serverOptions) {
+    (serverOptions as { run: CodeLanguageClient.Executable; debug: CodeLanguageClient.Executable }).run.options = {
+      ...((serverOptions as { run: CodeLanguageClient.Executable; debug: CodeLanguageClient.Executable }).run.options || {}),
+      shell: true
+    };
+    (serverOptions as { run: CodeLanguageClient.Executable; debug: CodeLanguageClient.Executable }).debug.options = {
+      ...((serverOptions as { run: CodeLanguageClient.Executable; debug: CodeLanguageClient.Executable }).debug.options || {}),
+      shell: true
+    };
+  }
+
   const statusBarItemManager: StatusBarItemManager = new StatusBarItemManager(context);
 
   const workspaceConfig: Code.WorkspaceConfiguration = Code.workspace.getConfiguration('ltex');
